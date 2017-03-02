@@ -1,0 +1,88 @@
+.cheers-holder {
+  border: 1px solid black;
+  top: 0;
+  right: 0;
+  width: 350px;
+  padding: 10px;
+  position: fixed;
+  border-color: transparent;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+.cheers-holder.success {
+  background-color: #43ac6a;
+}
+
+.cheers-holder.error {
+  background-color: #f04124;
+}
+
+.cheers-holder.warning {
+  background-color: #e99002;
+}
+
+.cheers-holder.info {
+  background-color: #5bc0de;
+}
+
+.cheers-holder.success .cheers-icon {
+  background-color: #289852;
+}
+
+.cheers-holder.error .cheers-icon {
+  background-color: #C6240A;
+}
+
+.cheers-holder.warning .cheers-icon {
+  background-color: #BA7200;
+}
+
+.cheers-holder.info .cheers-icon {
+  background-color: #1993B6;
+}
+
+.cheers-icon {
+  height: 60px;
+  width: 60px;
+  float: left;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+.cheers-holder .cheers-body {
+  height: auto;
+  padding: 3px;
+  width: 260px;
+  float: right;
+}
+
+.cheers-holder .cheers-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.cheers-holder.slideleft {
+  margin-top: 15px;
+  margin-right: -350px;
+  -webkit-animation-name: slideleft;
+  -webkit-animation-duration: 4s;
+  animation-name: slideleft;
+  animation-duration: 4s;
+}
+
+@-webkit-keyframes slideleft {
+  0%   {margin-right: -350px;}
+  5%  {margin-right: 15px;}
+  95% {margin-right: 15px;}
+  100% {margin-right: -350px;}
+}
+
+@keyframes slideleft {
+  0%   {margin-right: -350px;}
+  5%  {margin-right: 15px;}
+  95% {margin-right: 15px;}
+  100% {margin-right: -350px;}
+}

@@ -1,0 +1,26 @@
+{
+  "name": "cheers-alert",
+  "version": "1.0.0",
+  "description": "simple website notification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maddumajohnerick/cheers-alert.git"
+  },
+  "keywords": [
+    "notification"
+  ],
+  "author": "John Erick Madduma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maddumajohnerick/cheers-alert/issues"
+  },
+  "homepage": "https://github.com/maddumajohnerick/cheers-alert#readme",
+  "dependencies": {
+    "font-awesome": "4.7.0",
+    "jquery": "3.1.1"
+  }
+}
