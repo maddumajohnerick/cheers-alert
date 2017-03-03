@@ -1,9 +1,15 @@
-import 'font-awesome/css/font-awesome.min.css';
-import './styles/cheers.css';
+'use strict';
 
-const cheers = (function () {
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+require('font-awesome/css/font-awesome.min.css');
+require('./styles/cheers.css');
+
+var cheers = function () {
   function setContainer(data, type) {
-    let icon = data.icon || '';
+    var icon = data.icon || '';
 
     if (!icon) {
       if (type === 'success') {
@@ -20,18 +26,18 @@ const cheers = (function () {
       }
     }
 
-    const container = $(`<div class="cheers-holder ${data.alert} ${type}">
-                            <div class="cheers-icon">
-                              <i class="fa ${icon}" aria-hidden="true"></i>
-                            </div>
-                            <div class="cheers-body">
-                              ${data.title ? `<div class="cheers-title">${data.title}</div>` : ''}
-                              ${data.message}
-                            </div>
-                        </div>`);
+    var container = $('<div class="cheers-holder ' + data.alert + ' ' + type + '">'
+                          +'<div class="cheers-icon">'
+                              +'<i class="fa ' + icon + '" aria-hidden="true"></i>'
+                          +'</div>'
+                          +'<div class="cheers-body">'
+                              +''+ (data.title ? '<div class="cheers-title">' + data.title + '</div>' : '') + ''
+                              +'' + data.message + ''
+                          +'</div>'
+                      +'</div>');
     $(container).appendTo('body');
-    setTimeout(() => {
-      // $(container).remove();
+    setTimeout(function () {
+      $(container).remove();
     }, 5000);
   }
 
@@ -51,14 +57,14 @@ const cheers = (function () {
     setContainer(data, 'info');
   }
 
-  const alert = {
-    success,
-    warning,
-    error,
-    info,
+  var alert = {
+    success: success,
+    warning: warning,
+    error: error,
+    info: info
   };
 
   return alert;
-}());
+}();
 
-export default cheers;
+exports.default = cheers;
