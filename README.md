@@ -31,3 +31,7 @@ cheers.success(
   - message - message or content.
   - alert - transition of notification.
   - icon - uses font awesome(optional).
+
+### To Do
+  - add tests.
+  - more alert styles.
