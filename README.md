@@ -21,15 +21,21 @@ cheers.success(
 );
 ```
 
-### Notification Types
-  - slideleft
-  - fadein
+### Configuring .duration
+set the .duration one-time to avoid redundancy
+```js
+cheers.setDuration(10); //sets all notification's transition dynamically.
+```
 
-### Alert Types
+### Notification Types
   - success
   - warning
   - error
   - info
+
+### Alert Types
+  - slideleft
+  - fadein
 
 ### Options
   - title - header(optional).
@@ -37,11 +43,6 @@ cheers.success(
   - alert - transition of notification.
   - icon - uses font awesome(optional).
   - duration - transition duration(defaults to 4) in seconds.
-
-### Configuring .duration
-```js
-cheers.setDuration(10); //sets the duration to 10 seconds.
-```
 
 ### To Do
   - add tests.
