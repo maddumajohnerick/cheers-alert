@@ -17,10 +17,15 @@ cheers.success(
     message: 'Validation error',
     alert: 'slideleft',
     icon: 'fa-user',
+    duration: 3
 );
 ```
 
-### Types
+### Notification Types
+  - slideleft
+  - fadein
+
+### Alert Types
   - success
   - warning
   - error
@@ -31,6 +36,12 @@ cheers.success(
   - message - message or content.
   - alert - transition of notification.
   - icon - uses font awesome(optional).
+  - duration - transition duration(defaults to 4) in seconds.
+
+### Configuring .duration
+```js
+cheers.setDuration(10); //sets the duration to 10 seconds.
+```
 
 ### To Do
   - add tests.

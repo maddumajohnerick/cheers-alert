@@ -69,9 +69,7 @@
   margin-top: 15px;
   margin-right: -350px;
   -webkit-animation-name: slideleft;
-  -webkit-animation-duration: 4s;
   animation-name: slideleft;
-  animation-duration: 4s;
 }
 
 @-webkit-keyframes slideleft {
@@ -86,4 +84,26 @@
   5%  {margin-right: 15px;}
   95% {margin-right: 15px;}
   100% {margin-right: -350px;}
+}
+
+.cheers-holder.fadein {
+  margin-top: 15px;
+  margin-right: 15px;
+  opacity: .0;
+  -webkit-animation-name: fadein;
+  animation-name: fadein;
+}
+
+@-webkit-keyframes fadein {
+  0%   {opacity: .0;}
+  10%  {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: .0;}
+}
+
+@keyframes fadein {
+  0%   {opacity: .0;}
+  10%  {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: .0;}
 }

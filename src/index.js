@@ -8,8 +8,15 @@ require('font-awesome/css/font-awesome.min.css');
 require('./styles/cheers.css');
 
 var cheers = function () {
+  var duration = 4;
+
+  function setDuration(secs) {
+    duration = secs;
+  }
+
   function setContainer(data, type) {
     var icon = data.icon || '';
+    duration = data.duration || duration;
 
     if (!icon) {
       if (type === 'success') {
@@ -35,10 +42,12 @@ var cheers = function () {
                               +'' + data.message + ''
                           +'</div>'
                       +'</div>');
+    $(container).css('-webkit-animation-duration', ''+ duration +'s');
+    $(container).css('animation-duration', ''+ duration +'s');
     $(container).appendTo('body');
     setTimeout(function () {
       $(container).remove();
-    }, 5000);
+    }, 1000 * (duration + 1));
   }
 
   function success(data) {
@@ -61,7 +70,8 @@ var cheers = function () {
     success: success,
     warning: warning,
     error: error,
-    info: info
+    info: info,
+    setDuration: setDuration
   };
 
   return alert;
