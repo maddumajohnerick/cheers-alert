@@ -4,7 +4,7 @@ simple website notification
 
 ### Install
 ```js
-$ npm install react-paginate --save
+$ npm install cheers-alert --save
 ```
 
 
@@ -30,4 +30,4 @@ cheers.success(
   - title - header(optional).
   - message - message or content.
   - alert - transition of notification.
-  - icon - uses font awesome(optional). 
+  - icon - uses font awesome(optional).
