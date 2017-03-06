@@ -12,13 +12,13 @@ $ npm install cheers-alert --save
 ```js
 import cheers from 'cheers-alert';
 
-cheers.success(
+cheers.success({
     title: 'Warning',
     message: 'Validation error',
     alert: 'slideleft',
     icon: 'fa-user',
     duration: 3
-);
+});
 ```
 
 ### Configuring .duration
