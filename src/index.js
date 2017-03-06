@@ -14,6 +14,20 @@ var cheers = function () {
     duration = secs;
   }
 
+  function dismiss(container) {
+    $(container).css('transition', '.5s');
+    $(container).css('background', 'transparent');
+    $(container).find('.cheers-icon').css('background', 'transparent');
+    $(container).find('.cheers-icon i').css('color', 'transparent');
+    $(container).find('.cheers-title').css('color', 'transparent');
+    $(container).find('.cheers-body').css('color', 'transparent');
+    $(container).css('-webkit-box-shadow', '1px 1px 4px rgba(0, 0, 0, 0.0)');
+    $(container).css('box-shadow', '1px 1px 4px rgba(0, 0, 0, 0.0)');
+    setTimeout(function () {
+      $(container).remove();
+    }, 2600);
+  }
+
   function setContainer(data, type) {
     var icon = data.icon || '';
     duration = data.duration || duration;
@@ -41,10 +55,14 @@ var cheers = function () {
                               +''+ (data.title ? '<div class="cheers-title">' + data.title + '</div>' : '') + ''
                               +'' + data.message + ''
                           +'</div>'
+                          +'<div class="cheers-overlay"></div>'
                       +'</div>');
     $(container).css('-webkit-animation-duration', ''+ duration +'s');
     $(container).css('animation-duration', ''+ duration +'s');
     $(container).appendTo('body');
+    $(container).on('click', function (){
+      dismiss(container);
+    });
     setTimeout(function () {
       $(container).remove();
     }, 1000 * (duration + 1));
