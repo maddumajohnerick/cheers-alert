@@ -35,6 +35,7 @@ var cheers = function () {
 
   function setContainer(data, type) {
     var icon = data.icon || '';
+    var alert = data.alert || 'fadein'
     duration = data.duration || duration;
 
     if (!icon) {
@@ -52,7 +53,7 @@ var cheers = function () {
       }
     }
 
-    var container = $('<div class="cheers-holder ' + data.alert + ' ' + type + '">'
+    var container = $('<div class="cheers-holder ' + alert + ' ' + type + '">'
                           +'<div class="cheers-icon">'
                               +'<i class="fa ' + icon + '" aria-hidden="true"></i>'
                           +'</div>'

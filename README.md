@@ -21,17 +21,12 @@ cheers.success({
 });
 ```
 
-### Configuring .duration
-set the .duration one-time to avoid redundancy.
-```js
-cheers.setDuration(10); //sets all notification's transition dynamically.
-```
-
-### Disable close onClick
-set to false to prevent closing onClick.
-```js
-cheers.setToggle(false); //defaults to true when not set.
-```
+### Options
+  - title - header(optional).
+  - message - message or content.
+  - alert - transition of notification(defaults to fadein).
+  - icon - uses font awesome(optional).
+  - duration - transition duration(defaults to 4) in seconds.
 
 ### Notification Types
   - success
@@ -43,12 +38,17 @@ cheers.setToggle(false); //defaults to true when not set.
   - slideleft
   - fadein
 
-### Options
-  - title - header(optional).
-  - message - message or content.
-  - alert - transition of notification.
-  - icon - uses font awesome(optional).
-  - duration - transition duration(defaults to 4) in seconds.
+### Configuring .duration
+set the .duration one-time to avoid redundancy.
+```js
+cheers.setDuration(10); //sets all notification's transition dynamically.
+```
+
+### Disable close onClick
+set to false to prevent closing onClick.
+```js
+cheers.setToggle(false); //defaults to true when not set.
+```
 
 ### Customize CSS
 overide this class to modify styles.
