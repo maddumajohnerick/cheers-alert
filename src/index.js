@@ -9,9 +9,14 @@ require('./styles/cheers.css');
 
 var cheers = function () {
   var duration = 4;
+  var dismissClick = false;
 
   function setDuration(secs) {
     duration = secs;
+  }
+
+  function setToggle(toggle) {
+    dismissClick = toggle;
   }
 
   function dismiss(container) {
@@ -60,9 +65,9 @@ var cheers = function () {
     $(container).css('-webkit-animation-duration', ''+ duration +'s');
     $(container).css('animation-duration', ''+ duration +'s');
     $(container).appendTo('body');
-    $(container).on('click', function (){
-      dismiss(container);
-    });
+    if (dismissClick) {
+      $(container).on('click', function (){ dismiss(container); });
+    }
     setTimeout(function () {
       $(container).remove();
     }, 1000 * (duration + 1));
@@ -89,7 +94,8 @@ var cheers = function () {
     warning: warning,
     error: error,
     info: info,
-    setDuration: setDuration
+    setDuration: setDuration,
+    setToggle: setToggle
   };
 
   return alert;
