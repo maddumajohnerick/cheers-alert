@@ -31,7 +31,8 @@ describe("cheers-alert notification", function() {
       icon: 'fa-user',
     });
 
-    expect($('body').html()).to.contain('cheers-holder slideleft success');
+
+    expect($('.cheers-holder').attr('class')).to.contain('cheers-holder slideleft success');
   });
 
   it("should create error notification", function() {
@@ -42,7 +43,7 @@ describe("cheers-alert notification", function() {
       icon: 'fa-user',
     });
 
-    expect($('body').html()).to.contain('cheers-holder slideleft error');
+    expect($('.cheers-holder').attr('class')).to.contain('cheers-holder slideleft error');
   });
 
   it("should create warning notification", function() {
@@ -53,7 +54,7 @@ describe("cheers-alert notification", function() {
       icon: 'fa-user',
     });
 
-    expect($('body').html()).to.contain('cheers-holder slideleft warning');
+    expect($('.cheers-holder').attr('class')).to.contain('cheers-holder slideleft warning');
   });
 
   it("should create info notification", function() {
@@ -64,7 +65,7 @@ describe("cheers-alert notification", function() {
       icon: 'fa-user',
     });
 
-    expect($('body').html()).to.contain('cheers-holder slideleft info');
+    expect($('.cheers-holder').attr('class')).to.contain('cheers-holder slideleft info');
   });
 });
 
@@ -85,7 +86,7 @@ describe("cheers-alert properties", function() {
       icon: 'fa-user',
     });
 
-    expect($('.cheers-holder').html()).to.contain('Warning');
+    expect($('.cheers-title').html()).to.contain('Warning');
   });
 
   it("should set message", function() {
@@ -95,6 +96,7 @@ describe("cheers-alert properties", function() {
       alert: 'slideleft',
       icon: 'fa-user',
     });
+
 
     expect($('.cheers-body').html()).to.contain('Validation error');
   });
@@ -106,7 +108,7 @@ describe("cheers-alert properties", function() {
       icon: 'fa-user',
     });
 
-    expect($('body').html()).to.contain('fadein');
+    expect($('.cheers-holder').attr('class')).to.contain('fadein');
   });
 
   it("should set alert", function() {
@@ -117,7 +119,7 @@ describe("cheers-alert properties", function() {
       icon: 'fa-user',
     });
 
-    expect($('body').html()).to.contain('slideleft');
+    expect($('.cheers-holder').attr('class')).to.contain('slideleft');
   });
 
   it("should set default icon", function() {
@@ -182,5 +184,59 @@ describe("cheers-alert functionalities", function() {
         expect($('body').html().length).to.equal(0);
       } );
     }, 4000);
+  });
+
+  it("should set setToggle", function(done) {
+    cheers.default.setToggle(true);
+
+    cheers.default.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    this.timeout(6000);
+    setTimeout(function() {
+      check( done, function() {
+        expect($('body').html().length).to.equal(0);
+      } );
+    }, 5000);
+  });
+
+  it("should dismiss onClick", function(done) {
+    cheers.default.setToggle(true);
+
+    cheers.default.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    $('.cheers-holder').trigger('click');
+
+    this.timeout(4000);
+    setTimeout(function() {
+      check( done, function() {
+        expect($('body').html().length).to.equal(0);
+      } );
+    }, 3000);
+  });
+
+  it("should have these css", function() {
+    cheers.default.setToggle(true);
+
+    cheers.default.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    $('.cheers-holder').trigger('click');
+
+    expect($('.cheers-holder').attr('style')).to.contain('background: transparent;');
+    expect($('.cheers-icon').attr('style')).to.contain('background: transparent;');
   });
 });

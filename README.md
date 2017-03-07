@@ -3,6 +3,7 @@ simple website notification
 
 [![Build Status](https://travis-ci.org/maddumajohnerick/cheers-alert.svg?branch=master)](https://travis-ci.org/maddumajohnerick/cheers-alert)
 [![Coverage Status](https://coveralls.io/repos/github/maddumajohnerick/cheers-alert/badge.svg?branch=master)](https://coveralls.io/github/maddumajohnerick/cheers-alert?branch=master)
+[![Code Climate](https://lima.codeclimate.com/github/maddumajohnerick/cheers-alert/badges/gpa.svg)](https://lima.codeclimate.com/github/maddumajohnerick/cheers-alert)
 
 ### Install
 ```js
@@ -48,7 +49,7 @@ cheers.setDuration(10); //sets all notification's transition dynamically.
 ### Disable close onClick
 set to false to prevent closing onClick.
 ```js
-cheers.setToggle(false); //defaults to true when not set.
+cheers.setToggle(true); //defaults to false when not set.
 ```
 
 ### Customize CSS
@@ -63,5 +64,4 @@ overide this class to modify styles.
 ```
 
 ### To Do
-  - add tests.
   - more alert styles.
