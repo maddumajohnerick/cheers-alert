@@ -1,6 +1,9 @@
 # cheers-alert
 simple website notification
 
+[![Build Status](https://travis-ci.org/maddumajohnerick/cheers-alert.svg?branch=master)](https://travis-ci.org/maddumajohnerick/cheers-alert)
+[![Coverage Status](https://coveralls.io/repos/github/maddumajohnerick/cheers-alert/badge.svg?branch=master)](https://coveralls.io/github/maddumajohnerick/cheers-alert?branch=master)
+
 ### Install
 ```js
 $ npm install cheers-alert --save
