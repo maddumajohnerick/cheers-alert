@@ -122,7 +122,7 @@ describe("cheers-alert properties", function() {
     expect($('.cheers-holder').attr('class')).to.contain('slideleft');
   });
 
-  it("should set default icon", function() {
+  it("should set default success icon", function() {
     cheers.default.success({
       title: 'Warning',
       message: 'Validation error',
@@ -130,6 +130,36 @@ describe("cheers-alert properties", function() {
     });
 
     expect($('.cheers-icon').html()).to.contain('fa-check');
+  });
+
+  it("should set default error icon", function() {
+    cheers.default.error({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+    });
+
+    expect($('.cheers-icon').html()).to.contain('fa-times');
+  });
+
+  it("should set default warning icon", function() {
+    cheers.default.warning({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+    });
+
+    expect($('.cheers-icon').html()).to.contain('fa-exclamation');
+  });
+
+  it("should set default info icon", function() {
+    cheers.default.info({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+    });
+
+    expect($('.cheers-icon').html()).to.contain('fa-info');
   });
 
   it("should set icon", function() {
