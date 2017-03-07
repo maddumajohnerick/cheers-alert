@@ -1,6 +1,6 @@
 {
   "name": "cheers-alert",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple website notification",
   "main": "src/index.js",
   "scripts": {
