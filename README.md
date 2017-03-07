@@ -43,7 +43,7 @@ cheers.success({
 ### Configuring .duration
 set the .duration one-time to avoid redundancy.
 ```js
-cheers.setDuration(10); //sets all notification's transition dynamically.
+cheers.setDuration(10); //sets all notification's transition.
 ```
 
 ### Disable close onClick
