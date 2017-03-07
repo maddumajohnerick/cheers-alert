@@ -1,12 +1,10 @@
 # cheers-alert
 simple website notification
 
-
 ### Install
 ```js
 $ npm install cheers-alert --save
 ```
-
 
 ### Usage
 ```js
