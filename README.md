@@ -21,7 +21,7 @@ cheers.success({
 });
 ```
 
-### Options
+### Properties
   - title - header(optional).
   - message - message or content.
   - alert - transition of notification(defaults to fadein).
