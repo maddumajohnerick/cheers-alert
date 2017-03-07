@@ -4,10 +4,6 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-// require('font-awesome/css/font-awesome.min.css');
-// require('./styles/cheers.css');
-var $ = require('jquery/dist/jquery')(window);
-
 var cheers = function () {
   var duration = 4;
   var dismissClick = false;

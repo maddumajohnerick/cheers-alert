@@ -3,6 +3,7 @@
   "version": "0.0.8",
   "description": "simple website notification",
   "main": "src/index.js",
+  "style": "src/styles/cheers.css",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
@@ -31,7 +32,6 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
-    "cheerio": "0.22.0",
     "mocha": "3.2.0"
   }
 }

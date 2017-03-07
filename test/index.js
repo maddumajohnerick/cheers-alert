@@ -1,13 +1,17 @@
 var expect = require("chai").expect;
-var cheerio = require('cheerio');
 var cheers = require('../src/index.js');
 
-let $ = cheerio.load('<!doctype html><html><body></body></html>');
+var jsdom = require('jsdom').jsdom;
+var document = jsdom('<div/');
+var window = document.defaultView;
+var $ = jQuery = require('jquery')(window);
 
-$.html();
+describe("cheers-alert", () => {
+  beforeEach(function() {
+     global.$ = $;
+  });
 
-describe("Our first test", () => {
-  it("should pass", () => {
+  it("should create notification", () => {
     cheers.default.success({
       title: 'Warning',
       message: 'Validation error',
@@ -15,7 +19,8 @@ describe("Our first test", () => {
       icon: 'fa-user',
       duration: 3
     });
-    expect(true).to.equal(true);
+
+    expect($('body').html()).to.contain('cheers-holder slideleft success');
   });
 });
 
