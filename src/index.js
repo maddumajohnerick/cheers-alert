@@ -4,8 +4,6 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-require('./styles/cheers.css');
-
 var cheers = (function () {
   var duration = 4;
   var dismissClick = false;

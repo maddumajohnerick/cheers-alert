@@ -4,8 +4,8 @@
   "description": "simple website notification",
   "main": "src/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec --require ignore-styles",
-    "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec --require ignore-styles",
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "repository": {
@@ -34,7 +34,6 @@
   "devDependencies": {
     "chai": "3.5.0",
     "coveralls": "2.12.0",
-    "ignore-styles": "^5.0.1",
     "istanbul": "0.4.5",
     "jsdom": "9.11.0",
     "mocha": "3.2.0"
