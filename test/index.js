@@ -24,7 +24,7 @@ describe("cheers-alert notification", function() {
   });
 
   it("should create success notification", function() {
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -36,7 +36,7 @@ describe("cheers-alert notification", function() {
   });
 
   it("should create error notification", function() {
-    cheers.default.error({
+    cheers.error({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -47,7 +47,7 @@ describe("cheers-alert notification", function() {
   });
 
   it("should create warning notification", function() {
-    cheers.default.warning({
+    cheers.warning({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -58,7 +58,7 @@ describe("cheers-alert notification", function() {
   });
 
   it("should create info notification", function() {
-    cheers.default.info({
+    cheers.info({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -79,7 +79,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set title", function() {
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -90,7 +90,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set message", function() {
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -102,7 +102,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set default alert", function() {
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       icon: 'fa-user',
@@ -112,7 +112,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set alert", function() {
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -123,7 +123,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set default success icon", function() {
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -133,7 +133,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set default error icon", function() {
-    cheers.default.error({
+    cheers.error({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -143,7 +143,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set default warning icon", function() {
-    cheers.default.warning({
+    cheers.warning({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -153,7 +153,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set default info icon", function() {
-    cheers.default.info({
+    cheers.info({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -163,7 +163,7 @@ describe("cheers-alert properties", function() {
   });
 
   it("should set icon", function() {
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -183,7 +183,7 @@ describe("cheers-alert functionalities", function() {
   });
 
   it("should dismiss after 4-5s", function(done) {
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -199,9 +199,9 @@ describe("cheers-alert functionalities", function() {
   });
 
   it("should dismiss after set secs", function(done) {
-    cheers.default.setDuration(3);
+    cheers.setDuration(3);
 
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -217,9 +217,9 @@ describe("cheers-alert functionalities", function() {
   });
 
   it("should set setToggle", function(done) {
-    cheers.default.setToggle(true);
+    cheers.setToggle(true);
 
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -235,9 +235,9 @@ describe("cheers-alert functionalities", function() {
   });
 
   it("should dismiss onClick", function(done) {
-    cheers.default.setToggle(true);
+    cheers.setToggle(true);
 
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',
@@ -255,9 +255,9 @@ describe("cheers-alert functionalities", function() {
   });
 
   it("should have these css", function() {
-    cheers.default.setToggle(true);
+    cheers.setToggle(true);
 
-    cheers.default.success({
+    cheers.success({
       title: 'Warning',
       message: 'Validation error',
       alert: 'slideleft',

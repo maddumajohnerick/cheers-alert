@@ -7,6 +7,7 @@
   position: fixed;
   border-color: transparent;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   color: #ffffff;
 }
@@ -84,6 +85,7 @@
   margin-top: 15px;
   margin-right: -350px;
   -webkit-animation-name: slideleft;
+  -moz-animation-name: slideleft;
   animation-name: slideleft;
 }
 
@@ -106,6 +108,7 @@
   margin-right: 15px;
   opacity: .0;
   -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
   animation-name: fadein;
 }
 

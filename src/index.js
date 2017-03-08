@@ -6,7 +6,7 @@ Object.defineProperty(exports, '__esModule', {
 
 require('./styles/cheers.css');
 
-var cheers = function () {
+var cheers = (function () {
   var duration = 4;
   var dismissClick = false;
 
@@ -99,6 +99,6 @@ var cheers = function () {
   };
 
   return alert;
-}();
+})();
 
-exports.default = cheers;
+module.exports = cheers;
