@@ -34,7 +34,7 @@ var cheers = (function () {
 
   function setContainer(data, type) {
     var icon = data.icon || '';
-    var alert = data.alert || 'fadein'
+    var alert = data.alert || 'fadein';
     duration = data.duration || duration;
 
     if (!icon) {
@@ -99,6 +99,6 @@ var cheers = (function () {
   };
 
   return alert;
-})();
+}());
 
 module.exports = cheers;
