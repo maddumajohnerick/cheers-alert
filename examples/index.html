@@ -1,0 +1,26 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cheers Alert Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dist/cheers-alert.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../dist/cheers-alert.min.js"></script>
+  </head>
+  <body>
+    <button id="clickme">CLICK ME</button>
+  <script>
+    $(document).ready(function() {
+      $("#clickme").on("click", function() {
+        window.cheers.warning({
+          title: 'Warning',
+          message: 'Validation error',
+          alert: 'slideleft',
+          icon: 'fa-user',
+          duration: 3,
+        });
+      });
+    })
+  </script>
+  </body>
+</html>
