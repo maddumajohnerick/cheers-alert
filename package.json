@@ -1,17 +1,25 @@
 {
   "name": "cheers-alert",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "simple website notification",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maddumajohnerick/cheers-alert.git"
   },
   "keywords": [
-    "notification"
+    "cheers-alert",
+    "cheersalert",
+    "cheers",
+    "alert",
+    "notification",
+    "toaster",
+    "toast"
   ],
   "author": "John Erick Madduma",
   "license": "ISC",
@@ -22,5 +30,12 @@
   "dependencies": {
     "font-awesome": "4.7.0",
     "jquery": "3.1.1"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "coveralls": "2.12.0",
+    "istanbul": "0.4.5",
+    "jsdom": "9.11.0",
+    "mocha": "3.2.0"
   }
 }
