@@ -1,0 +1,127 @@
+.cheers-holder {
+  border: 1px solid black;
+  top: 0;
+  right: 0;
+  width: 350px;
+  padding: 10px;
+  position: fixed;
+  border-color: transparent;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+.cheers-holder.success {
+  background-color: #43ac6a;
+}
+
+.cheers-holder.error {
+  background-color: #f04124;
+}
+
+.cheers-holder.warning {
+  background-color: #e99002;
+}
+
+.cheers-holder.info {
+  background-color: #39ACCD;
+}
+
+.cheers-holder.success .cheers-icon {
+  background-color: #289852;
+}
+
+.cheers-holder.error .cheers-icon {
+  background-color: #C6240A;
+}
+
+.cheers-holder.warning .cheers-icon {
+  background-color: #BA7200;
+}
+
+.cheers-holder.info .cheers-icon {
+  background-color: #1993B6;
+}
+
+.cheers-icon {
+  height: 55px;
+  width: 55px;
+  float: left;
+  color: white;
+  font-size: 35px;
+  text-align: center;
+  transition: .5s;
+}
+
+.cheers-icon i {
+  transition: .5s;
+}
+
+.cheers-holder .cheers-body {
+  height: auto;
+  padding: 3px;
+  width: 260px;
+  float: right;
+  font-weight: 400;
+  transition: .5s;
+}
+
+.cheers-holder .cheers-title {
+  font-weight: 600;
+  transition: .5s;
+}
+
+.cheers-holder .cheers-overlay {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 75px;
+  width: 350px;
+  z-index: 100;
+}
+
+.cheers-holder.slideleft {
+  margin-top: 15px;
+  margin-right: -350px;
+  -webkit-animation-name: slideleft;
+  -moz-animation-name: slideleft;
+  animation-name: slideleft;
+}
+
+@-webkit-keyframes slideleft {
+  0%   {margin-right: -350px;}
+  5%  {margin-right: 15px;}
+  95% {margin-right: 15px;}
+  100% {margin-right: -350px;}
+}
+
+@keyframes slideleft {
+  0%   {margin-right: -350px;}
+  5%  {margin-right: 15px;}
+  95% {margin-right: 15px;}
+  100% {margin-right: -350px;}
+}
+
+.cheers-holder.fadein {
+  margin-top: 15px;
+  margin-right: 15px;
+  opacity: .0;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
+  animation-name: fadein;
+}
+
+@-webkit-keyframes fadein {
+  0%   {opacity: .0;}
+  10%  {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: .0;}
+}
+
+@keyframes fadein {
+  0%   {opacity: .0;}
+  10%  {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: .0;}
+}
