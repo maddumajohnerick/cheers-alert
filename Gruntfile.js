@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     },
     browserify: {
       client: {
-        src: ['src/index.js'],
+        src: ['src/cheers-alert.js'],
         dest: 'dist/cheers-alert.js',
         options: {
           browserifyOptions: {
