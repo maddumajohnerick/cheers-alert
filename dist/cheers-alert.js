@@ -8,6 +8,12 @@ Object.defineProperty(exports, '__esModule', {
 var cheers = (function () {
   var duration = 4;
   var dismissClick = false;
+  var defaultIcons = {
+    success: 'fa-check',
+    error: 'fa-times',
+    warning: 'fa-exclamation',
+    info: 'fa-info'
+  }
 
   function setDuration(secs) {
     duration = secs;
@@ -37,30 +43,10 @@ var cheers = (function () {
     duration = data.duration || duration;
 
     if (!icon) {
-      if (type === 'success') {
-        icon = 'fa-check';
-      }
-      if (type === 'error') {
-        icon = 'fa-times';
-      }
-      if (type === 'warning') {
-        icon = 'fa-exclamation';
-      }
-      if (type === 'info') {
-        icon = 'fa-info';
-      }
+      icon = defaultIcons[type];
     }
 
-    var container = $('<div class="cheers-holder ' + alert + ' ' + type + '">'
-                          +'<div class="cheers-icon">'
-                              +'<i class="fa ' + icon + '" aria-hidden="true"></i>'
-                          +'</div>'
-                          +'<div class="cheers-body">'
-                              +''+ (data.title ? '<div class="cheers-title">' + data.title + '</div>' : '') + ''
-                              +'' + data.message + ''
-                          +'</div>'
-                          +'<div class="cheers-overlay"></div>'
-                      +'</div>');
+    var container = $('<div class="cheers-holder ' + alert + ' ' + type + '"><div class="cheers-icon"><i class="fa ' + icon + '" aria-hidden="true"></i></div><div class="cheers-body">'+ (data.title ? '<div class="cheers-title">' + data.title + '</div>' : '') + '' + data.message + '</div><div class="cheers-overlay"></div></div>');
     $(container).css('-webkit-animation-duration', ''+ duration +'s');
     $(container).css('animation-duration', ''+ duration +'s');
     $(container).appendTo('body');

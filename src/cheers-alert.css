@@ -69,12 +69,12 @@
   width: 270px;
   float: right;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   transition: .5s;
 }
 
 .cheers-holder .cheers-title {
-  font-weight: 500;
+  font-weight: 600;
   transition: .5s;
   font-size: 14px;
 }
