@@ -13,7 +13,7 @@ $ npm install cheers-alert --save
 ### Usage
 ```js
 import cheers from 'cheers-alert';
-import 'cheers-alert/src/cheers.css'; //load style
+import 'cheers-alert/src/cheers-alert.css'; //load style
 import 'font-awesome/css/font-awesome.min.css'; //load font-awesome
 
 cheers.success({
