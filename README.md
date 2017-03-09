@@ -26,11 +26,11 @@ cheers.success({
 ```
 
 ### Properties
-  - title - header(optional).
-  - message - message or content.
-  - alert - transition of notification(defaults to fadein).
-  - icon - uses font awesome(optional).
-  - duration - transition duration(defaults to 4) in seconds.
+  - title - [String] header(optional).
+  - message - [String] message or content(required).
+  - alert - [String] transition of notification(defaults to fadein).
+  - icon - [String] uses font awesome(optional).
+  - duration - [Number] transition duration(defaults to 4) in seconds.
 
 ### Notification Types
   - success

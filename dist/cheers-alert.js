@@ -16,7 +16,7 @@ var cheers = (function () {
   }
 
   function setDuration(secs) {
-    duration = secs;
+    duration = secs < 2 ? 4 : secs;
   }
 
   function setToggle(toggle) {
@@ -37,16 +37,48 @@ var cheers = (function () {
     }, 2600);
   }
 
+  function validateFields(data) {
+    var validated = data;
+
+    if (!$.trim(data.title).length || !data.title) {
+      validated.title = '';
+    }
+    if (!$.trim(data.message).length || !data.message) {
+      return false;
+    }
+    if (isNaN(data.duration) && data.duration) {
+      return false;
+    }
+    if(data.duration && data.duration < 2) {
+      return false;
+    }
+
+    return validated;
+  }
+
   function setContainer(data, type) {
-    var icon = data.icon || '';
-    var alert = data.alert || 'fadein';
-    duration = data.duration || duration;
+    var validated = validateFields(data);
+
+    if (!validated) return false;
+
+    var icon = validated.icon || '';
+    var alert = validated.alert || 'fadein';
+    duration = validated.duration || duration;
 
     if (!icon) {
       icon = defaultIcons[type];
     }
 
-    var container = $('<div class="cheers-holder ' + alert + ' ' + type + '"><div class="cheers-icon"><i class="fa ' + icon + '" aria-hidden="true"></i></div><div class="cheers-body">'+ (data.title ? '<div class="cheers-title">' + data.title + '</div>' : '') + '' + data.message + '</div><div class="cheers-overlay"></div></div>');
+    var container = $('<div class="cheers-holder ' + alert + ' ' + type + '">'
+                      +'<div class="cheers-icon">'
+                          +'<i class="fa ' + icon + '" aria-hidden="true"></i>'
+                      +'</div>'
+                      +'<div class="cheers-body">'
+                          +''+ (validated.title ? '<div class="cheers-title">' + validated.title + '</div>' : '') + ''
+                          +'' + validated.message + ''
+                      +'</div>'
+                      +'<div class="cheers-overlay"></div>'
+                  +'</div>');
     $(container).css('-webkit-animation-duration', ''+ duration +'s');
     $(container).css('animation-duration', ''+ duration +'s');
     $(container).appendTo('body');

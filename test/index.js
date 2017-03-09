@@ -69,7 +69,6 @@ describe("cheers-alert notification", function() {
   });
 });
 
-
 describe("cheers-alert properties", function() {
   beforeEach(function() {
      global.$ = $;
@@ -171,6 +170,54 @@ describe("cheers-alert properties", function() {
     });
 
     expect($('.cheers-icon').html()).to.contain('fa-user');
+  });
+});
+
+describe("cheers-alert field validation", function() {
+  beforeEach(function() {
+     global.$ = $;
+  });
+  afterEach(function() {
+    $('body').empty();
+  });
+
+  it("should set title to empty when not set", function() {
+    cheers.success({
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('.cheers-holder').attr('class')).to.contain('slideleft');
+  });
+
+  it("should error when message is not set", function() {
+    cheers.success({
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('body').html().length).to.equal(0);
+  });
+
+  it("should error when duration is not a number", function() {
+    cheers.success({
+      alert: 'slideleft',
+      icon: 'fa-user',
+      duration: 'a'
+    });
+
+    expect($('body').html().length).to.equal(0);
+  });
+
+  it("should error when duration is lesser than 2", function() {
+    cheers.success({
+      alert: 'slideleft',
+      icon: 'fa-user',
+      duration: 1
+    });
+
+    expect($('body').html().length).to.equal(0);
   });
 });
 
