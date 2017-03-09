@@ -7,9 +7,9 @@ module.exports = function(grunt) {
       src: ['test/*.js'],
       test: {
         options: {
-          reporter: 'spec',
-        },
-      },
+          reporter: 'spec'
+        }
+      }
     },
     browserify: {
       client: {
@@ -17,19 +17,19 @@ module.exports = function(grunt) {
         dest: 'dist/cheers-alert.js',
         options: {
           browserifyOptions: {
-            standalone: 'cheers',
-          },
-        },
-      },
+            standalone: 'cheers'
+          }
+        }
+      }
     },
     uglify: {
       options: {
-        banner: '/* <%= pkg.name %> <%= pkg.version %> */',
+        banner: '/* <%= pkg.name %> <%= pkg.version %> */'
       },
       build: {
         src: 'dist/cheers-alert.js',
-        dest: 'dist/<%= pkg.name %>.min.js',
-      },
+        dest: 'dist/<%= pkg.name %>.min.js'
+      }
     },
     cssmin: {
       target: {
@@ -38,10 +38,10 @@ module.exports = function(grunt) {
           cwd: 'src',
           src: ['*.css', '!*.min.css'],
           dest: 'dist',
-          ext: '.min.css',
-        }],
-      },
-    },
+          ext: '.min.css'
+        }]
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-mocha-test');

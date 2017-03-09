@@ -55,7 +55,7 @@
   font-size: 30px;
   text-align: center;
   transition: .5s;
-  margin: 10px 0px 10px 10px;
+  margin: 10px 0 10px 10px;
 }
 
 .cheers-icon i {
@@ -65,7 +65,7 @@
 
 .cheers-holder .cheers-body {
   height: auto;
-  margin: 13px 15px 10px 0px;
+  margin: 13px 15px 10px 0;
   width: 270px;
   float: right;
   font-weight: normal;
