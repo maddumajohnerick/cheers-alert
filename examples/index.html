@@ -1,26 +1,112 @@
 <!doctype html>
-  <head>
-    <meta charset="utf-8">
-    <title>Cheers Alert Example</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../dist/cheers-alert.min.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="../dist/cheers-alert.min.js"></script>
-  </head>
-  <body>
-    <button id="clickme">CLICK ME</button>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" dochead="1">
+  <title>cheers-alert</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../dist/cheers-alert.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="../dist/cheers-alert.min.js"></script>
+</head>
+<body>
+  <!-- <button id="clickme">CLICK ME</button> -->
+  <div class="container">
+    <br />
+    <br />
+    <div class="jumbotron">
+      <h1>cheers-alert</h1>
+      <p>simple website notification</p>
+      <br />
+      <br />
+      <br />
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-1 control-label">Duration</label>
+          <div class="col-sm-2">
+            <input type="number" min="2" class="form-control" id="duaration" name="duration" placeholder="in seconds" value="4">
+          </div>
+          <label for="inputEmail3" class="col-sm-1 control-label">Alert</label>
+          <div class="col-sm-2">
+            <select class="form-control" name="alert">
+              <option value="fadein">fadein</option>
+              <option value="slideleft">slideleft</option>
+            </select>
+          </div>
+          <label for="inputPassword3" class="col-sm-2 control-label">Dismiss on click</label>
+          <div class="col-sm-2">
+            <select class="form-control" name="dismiss" id="dismiss">
+              <option value="false">false</option>
+              <option value="true">true</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <br />
+          <br />
+          <div class="col-sm-offset-2 col-sm-10 text-right">
+            <button class="btn btn-md btn-success" id="clicksuccess">Success</button>
+            <button class="btn btn-md btn-warning" id="clickwarning">Warning</button>
+            <button class="btn btn-md btn-danger" id="clickerror">Error</button>
+            <button class="btn btn-md btn-info" id="clickinfo">Info</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
   <script>
-    $(document).ready(function() {
-      $("#clickme").on("click", function() {
-        window.cheers.warning({
-          title: 'Warning',
-          message: 'Validation error',
-          alert: 'slideleft',
-          icon: 'fa-user',
-          duration: 3,
-        });
+  $(document).ready(function() {
+    $("#dismiss").on("change", function(e) {
+      e.preventDefault();
+      if (e.currentTarget.value === 'true') {
+        cheers.setToggle(true);
+      } else {
+        cheers.setToggle(false);
+      }
+    });
+
+    $("#duaration").on("change", function(e) {
+      e.preventDefault();
+      cheers.setDuration(e.currentTarget.value);
+    });
+
+    $("#clicksuccess").on("click", function(e) {
+      e.preventDefault();
+      cheers.success({
+        title: 'Registration Success',
+        message: 'You may now login',
+        alert: $('select[name="alert"]').val(),
       });
-    })
+    });
+
+    $("#clickwarning").on("click", function(e) {
+      e.preventDefault();
+      cheers.warning({
+        title: 'Registration Success',
+        message: 'You may now login',
+        alert: $('select[name="alert"]').val(),
+      });
+    });
+
+    $("#clickerror").on("click", function(e) {
+      e.preventDefault();
+      cheers.error({
+        title: 'Registration Success',
+        message: 'You may now login',
+        alert: $('select[name="alert"]').val(),
+      });
+    });
+
+    $("#clickinfo").on("click", function(e) {
+      e.preventDefault();
+      cheers.info({
+        title: 'Registration Success',
+        message: 'You may now login',
+        alert: $('select[name=alert]').val(),
+      });
+    });
+  })
   </script>
-  </body>
+</body>
 </html>

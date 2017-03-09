@@ -48,11 +48,11 @@
 }
 
 .cheers-icon {
-  height: 55px;
-  width: 55px;
+  height: 45px;
+  width: 45px;
   float: left;
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
   transition: .5s;
   margin: 10px 0px 10px 10px;
@@ -65,18 +65,18 @@
 
 .cheers-holder .cheers-body {
   height: auto;
-  margin: 13px 13px 0px 0px;
-  width: 260px;
+  margin: 13px 15px 10px 0px;
+  width: 270px;
   float: right;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: normal;
+  font-size: 13px;
   transition: .5s;
 }
 
 .cheers-holder .cheers-title {
-  font-weight: 600;
+  font-weight: 500;
   transition: .5s;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .cheers-holder .cheers-overlay {

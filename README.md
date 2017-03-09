@@ -43,7 +43,7 @@ cheers.success({
   - fadein
 
 ### Configuring .duration
-set the .duration one-time to avoid redundancy.
+set the .duration one-time to avoid redundancy. minimum of 2(seconds).
 ```js
 cheers.setDuration(10); //sets all notification's transition.
 ```
