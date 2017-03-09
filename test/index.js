@@ -202,6 +202,7 @@ describe("cheers-alert field validation", function() {
 
   it("should error when duration is not a number", function() {
     cheers.success({
+      message: 'Validation error',
       alert: 'slideleft',
       icon: 'fa-user',
       duration: 'a'
@@ -212,6 +213,7 @@ describe("cheers-alert field validation", function() {
 
   it("should error when duration is lesser than 2", function() {
     cheers.success({
+      message: 'Validation error',
       alert: 'slideleft',
       icon: 'fa-user',
       duration: 1
