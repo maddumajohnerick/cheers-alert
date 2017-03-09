@@ -219,6 +219,24 @@ describe("cheers-alert field validation", function() {
 
     expect($('body').html().length).to.equal(0);
   });
+
+  it("should default duration to 4s", function(done) {
+    cheers.setDuration(2);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    this.timeout(6000);
+    setTimeout(function() {
+      check( done, function() {
+        expect($('body').html().length).to.equal(0);
+      } );
+    }, 5000);
+  });
 });
 
 describe("cheers-alert functionalities", function() {
