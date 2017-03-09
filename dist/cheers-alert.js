@@ -16,11 +16,11 @@ var cheers = (function () {
   }
 
   function setDuration(secs) {
-    duration = secs < 2 ? 4 : secs;
+    return duration = secs < 2 ? 4 : secs;
   }
 
   function setToggle(toggle) {
-    dismissClick = toggle;
+    return dismissClick = toggle;
   }
 
   function dismiss(container) {

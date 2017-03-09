@@ -221,7 +221,7 @@ describe("cheers-alert field validation", function() {
   });
 
   it("should default duration to 4s", function(done) {
-    cheers.setDuration(2);
+    cheers.setDuration(1);
 
     cheers.success({
       title: 'Warning',
