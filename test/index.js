@@ -1,5 +1,5 @@
 var expect = require("chai").expect;
-var cheers = require('../src/index.js');
+var cheers = require('../src/cheers-alert.js');
 
 var jsdom = require('jsdom').jsdom;
 var document = jsdom('<div/');
