@@ -5,9 +5,7 @@ simple website notification
 [![Coverage Status](https://coveralls.io/repos/github/maddumajohnerick/cheers-alert/badge.svg?branch=master)](https://coveralls.io/github/maddumajohnerick/cheers-alert?branch=master)
 [![Code Climate](https://lima.codeclimate.com/github/maddumajohnerick/cheers-alert/badges/gpa.svg)](https://lima.codeclimate.com/github/maddumajohnerick/cheers-alert)
 
-![Slide Left Demo](https://media.giphy.com/media/xUA7aPGwsStD52V9bW/source.gif)
-
-![Fade In Demo](https://media.giphy.com/media/l0IxYYx3eieGKNoVW/source.gif)
+![Demo Animation](https://media.giphy.com/media/3og0IKBVYGQlKJE9wc/source.gif)
 
 [Demo Page](https://maddumajohnerick.github.io/cheers-alert/examples/)
 
