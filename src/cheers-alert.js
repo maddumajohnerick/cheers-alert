@@ -36,19 +36,18 @@ var cheers = (function () {
     }, 2600);
   }
 
+  function checkTitle(title) {
+    if (!$.trim(title).length || !title) {
+      return '';
+    }
+    return title;
+  }
+
   function validateFields(data) {
     var validated = data;
+    validated.title = checkTitle(data.title);
 
-    if (!$.trim(data.title).length || !data.title) {
-      validated.title = '';
-    }
-    if (!$.trim(data.message).length || !data.message) {
-      return false;
-    }
-    if (isNaN(data.duration) && data.duration) {
-      return false;
-    }
-    if(data.duration && data.duration < 2) {
+    if ((!$.trim(data.message).length || !data.message) || (isNaN(data.duration) && data.duration) || (data.duration && data.duration < 2)) {
       return false;
     }
 
@@ -57,16 +56,11 @@ var cheers = (function () {
 
   function setContainer(data, type) {
     var validated = validateFields(data);
-
     if (!validated) return false;
 
-    var icon = validated.icon || '';
+    var icon = validated.icon || defaultIcons[type];
     var alert = validated.alert || 'fadein';
     duration = validated.duration || duration;
-
-    if (!icon) {
-      icon = defaultIcons[type];
-    }
 
     var container = $('<div class="cheers-holder ' + alert + ' ' + type + '">'
                       +'<div class="cheers-icon">'
