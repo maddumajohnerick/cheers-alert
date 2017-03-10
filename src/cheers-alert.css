@@ -2,8 +2,8 @@
   border: 1px solid black;
   top: 0;
   right: 0;
-  width: 350px;
-  max-width: 350px;
+  width: 320px;
+  max-width: 320px;
   /*padding: 10px;*/
   position: fixed;
   border-color: transparent;
@@ -13,6 +13,7 @@
   color: #ffffff;
   font-family: "Open Sans", sans-serif;
   display: block;
+  z-index: 99999;
 }
 
 .cheers-holder.success {
@@ -65,8 +66,8 @@
 
 .cheers-holder .cheers-body {
   height: auto;
-  margin: 13px 15px 10px 0;
-  width: 270px;
+  margin: 13px 10px 10px 0;
+  width: 245px;
   float: right;
   font-weight: normal;
   font-size: 14px;
@@ -90,24 +91,24 @@
 
 .cheers-holder.slideleft {
   margin-top: 15px;
-  margin-right: -400px;
+  margin-right: -370px;
   -webkit-animation-name: slideleft;
   -moz-animation-name: slideleft;
   animation-name: slideleft;
 }
 
 @-webkit-keyframes slideleft {
-  0%   {margin-right: -400px;}
+  0%   {margin-right: -370px;}
   5%  {margin-right: 15px;}
   95% {margin-right: 15px;}
-  100% {margin-right: -400px;}
+  100% {margin-right: -370px;}
 }
 
 @keyframes slideleft {
-  0%   {margin-right: -400px;}
+  0%   {margin-right: -370px;}
   5%  {margin-right: 15px;}
   95% {margin-right: 15px;}
-  100% {margin-right: -400px;}
+  100% {margin-right: -370px;}
 }
 
 .cheers-holder.fadein {
