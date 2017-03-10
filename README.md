@@ -6,8 +6,13 @@ simple website notification
 [![Code Climate](https://lima.codeclimate.com/github/maddumajohnerick/cheers-alert/badges/gpa.svg)](https://lima.codeclimate.com/github/maddumajohnerick/cheers-alert)
 
 ### Install
+#### NPM
 ```js
 $ npm install cheers-alert --save
+```
+#### Bower
+```js
+$ bower install cheers-alert --save
 ```
 
 ### Usage
