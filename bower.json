@@ -1,0 +1,31 @@
+{
+  "name": "cheers-alert",
+  "version": "1.2.0",
+  "description": "simple website notification",
+  "main": [
+    "dist/cheers-alert.min.js",
+    "dist/cheers-alert.min.css"
+  ],
+  "authors": [
+    "John Erick Madduma"
+  ],
+  "license": "ISC",
+  "moduleType": "globals",
+  "keywords": [
+    "cheers-alert",
+    "cheersalert",
+    "cheers",
+    "alert",
+    "notification",
+    "toaster",
+    "toast"
+  ],
+  "homepage": "https://github.com/maddumajohnerick/cheers-alert",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "examples",
+    "src",
+    "test"
+  ]
+}

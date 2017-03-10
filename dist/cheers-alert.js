@@ -8,9 +8,15 @@ Object.defineProperty(exports, '__esModule', {
 var cheers = (function () {
   var duration = 4;
   var dismissClick = false;
+  var defaultIcons = {
+    success: 'fa-check',
+    error: 'fa-times',
+    warning: 'fa-exclamation',
+    info: 'fa-info'
+  }
 
   function setDuration(secs) {
-    duration = secs;
+    duration = secs < 2 ? 4 : secs;
   }
 
   function setToggle(toggle) {
@@ -31,36 +37,42 @@ var cheers = (function () {
     }, 2600);
   }
 
-  function setContainer(data, type) {
-    var icon = data.icon || '';
-    var alert = data.alert || 'fadein';
-    duration = data.duration || duration;
+  function checkTitle(title) {
+    if (!$.trim(title).length || !title) {
+      return '';
+    }
+    return title;
+  }
 
-    if (!icon) {
-      if (type === 'success') {
-        icon = 'fa-check';
-      }
-      if (type === 'error') {
-        icon = 'fa-times';
-      }
-      if (type === 'warning') {
-        icon = 'fa-exclamation';
-      }
-      if (type === 'info') {
-        icon = 'fa-info';
-      }
+  function validateFields(data) {
+    var validated = data;
+    validated.title = checkTitle(data.title);
+
+    if ((!$.trim(data.message).length || !data.message) || (isNaN(data.duration) && data.duration) || (data.duration && data.duration < 2)) {
+      return false;
     }
 
+    return validated;
+  }
+
+  function setContainer(data, type) {
+    var validated = validateFields(data);
+    if (!validated) return false;
+
+    var icon = validated.icon || defaultIcons[type];
+    var alert = validated.alert || 'fadein';
+    duration = validated.duration || duration;
+
     var container = $('<div class="cheers-holder ' + alert + ' ' + type + '">'
-                          +'<div class="cheers-icon">'
-                              +'<i class="fa ' + icon + '" aria-hidden="true"></i>'
-                          +'</div>'
-                          +'<div class="cheers-body">'
-                              +''+ (data.title ? '<div class="cheers-title">' + data.title + '</div>' : '') + ''
-                              +'' + data.message + ''
-                          +'</div>'
-                          +'<div class="cheers-overlay"></div>'
-                      +'</div>');
+                      +'<div class="cheers-icon">'
+                          +'<i class="fa ' + icon + '" aria-hidden="true"></i>'
+                      +'</div>'
+                      +'<div class="cheers-body">'
+                          +''+ (validated.title ? '<div class="cheers-title">' + validated.title + '</div>' : '') + ''
+                          +'' + validated.message + ''
+                      +'</div>'
+                      +'<div class="cheers-overlay"></div>'
+                  +'</div>');
     $(container).css('-webkit-animation-duration', ''+ duration +'s');
     $(container).css('animation-duration', ''+ duration +'s');
     $(container).appendTo('body');

@@ -1,5 +1,5 @@
 var expect = require("chai").expect;
-var cheers = require('../src/index.js');
+var cheers = require('../src/cheers-alert.js');
 
 var jsdom = require('jsdom').jsdom;
 var document = jsdom('<div/');
@@ -68,7 +68,6 @@ describe("cheers-alert notification", function() {
     expect($('.cheers-holder').attr('class')).to.contain('cheers-holder slideleft info');
   });
 });
-
 
 describe("cheers-alert properties", function() {
   beforeEach(function() {
@@ -171,6 +170,74 @@ describe("cheers-alert properties", function() {
     });
 
     expect($('.cheers-icon').html()).to.contain('fa-user');
+  });
+});
+
+describe("cheers-alert field validation", function() {
+  beforeEach(function() {
+     global.$ = $;
+  });
+  afterEach(function() {
+    $('body').empty();
+  });
+
+  it("should set title to empty when not set", function() {
+    cheers.success({
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('.cheers-holder').attr('class')).to.contain('slideleft');
+  });
+
+  it("should error when message is not set", function() {
+    cheers.success({
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('body').html().length).to.equal(0);
+  });
+
+  it("should error when duration is not a number", function() {
+    cheers.success({
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+      duration: 'a'
+    });
+
+    expect($('body').html().length).to.equal(0);
+  });
+
+  it("should error when duration is lesser than 2", function() {
+    cheers.success({
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+      duration: 1
+    });
+
+    expect($('body').html().length).to.equal(0);
+  });
+
+  it("should default duration to 4s", function(done) {
+    cheers.setDuration(1);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    this.timeout(6000);
+    setTimeout(function() {
+      check( done, function() {
+        expect($('body').html().length).to.equal(0);
+      } );
+    }, 5000);
   });
 });
 

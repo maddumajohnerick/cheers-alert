@@ -6,14 +6,19 @@ simple website notification
 [![Code Climate](https://lima.codeclimate.com/github/maddumajohnerick/cheers-alert/badges/gpa.svg)](https://lima.codeclimate.com/github/maddumajohnerick/cheers-alert)
 
 ### Install
+#### NPM
 ```js
 $ npm install cheers-alert --save
+```
+#### Bower
+```js
+$ bower install cheers-alert --save
 ```
 
 ### Usage
 ```js
 import cheers from 'cheers-alert';
-import 'cheers-alert/src/cheers.css'; //load style
+import 'cheers-alert/src/cheers-alert.css'; //load style
 import 'font-awesome/css/font-awesome.min.css'; //load font-awesome
 
 cheers.success({
@@ -26,11 +31,11 @@ cheers.success({
 ```
 
 ### Properties
-  - title - header(optional).
-  - message - message or content.
-  - alert - transition of notification(defaults to fadein).
-  - icon - uses font awesome(optional).
-  - duration - transition duration(defaults to 4) in seconds.
+  - title - [String] header(optional).
+  - message - [String] message or content(required).
+  - alert - [String] transition of notification(defaults to fadein).
+  - icon - [String] uses font awesome(optional).
+  - duration - [Number] transition duration(defaults to 4) in seconds.
 
 ### Notification Types
   - success
@@ -43,7 +48,7 @@ cheers.success({
   - fadein
 
 ### Configuring .duration
-set the .duration one-time to avoid redundancy.
+set the .duration one-time to avoid redundancy. minimum of 2(seconds).
 ```js
 cheers.setDuration(10); //sets all notification's transition.
 ```
