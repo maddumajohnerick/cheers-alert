@@ -34,6 +34,22 @@ describe("cheers-alert notification", function() {
     expect($('body').html()).to.contain('alert-container');
   });
 
+  it("should create alert-container if none exist", function() {
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    if (!$('.alert-container').length) {
+      expect($('body').html()).to.contain('alert-container');
+    } else {
+      expect($('body').html()).to.contain('alert-container');
+    }
+
+  });
+
   it("should create success notification", function() {
     cheers.success({
       title: 'Warning',
