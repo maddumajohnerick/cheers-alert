@@ -32,6 +32,9 @@ var cheers = (function () {
     $(container).css('-webkit-box-shadow', '1px 1px 4px rgba(0, 0, 0, 0.0)');
     $(container).css('box-shadow', '1px 1px 4px rgba(0, 0, 0, 0.0)');
     setTimeout(function () {
+      $(container).css('display', 'none');
+    }, 500);
+    setTimeout(function () {
       $(container).remove();
     }, 2600);
   }
