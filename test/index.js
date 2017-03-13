@@ -23,6 +23,17 @@ describe("cheers-alert notification", function() {
     $('body').empty();
   });
 
+  it("should check if alert-container exist", function() {
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('body').html()).to.contain('alert-container');
+  });
+
   it("should create success notification", function() {
     cheers.success({
       title: 'Warning',
