@@ -43,9 +43,9 @@ describe("cheers-alert notification", function() {
     });
 
     if (!$('.alert-container').length) {
-      expect($('body').html()).to.contain('alert-container');
+      expect($('.alert-container').length).to.equal(1);
     } else {
-      expect($('body').html()).to.contain('alert-container');
+      expect($('.alert-container').length).to.equal(1);
     }
 
   });
