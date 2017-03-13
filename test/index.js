@@ -42,12 +42,7 @@ describe("cheers-alert notification", function() {
       icon: 'fa-user',
     });
 
-    if (!$('.alert-container').length) {
-      expect($('.alert-container').length).to.equal(1);
-    } else {
-      expect($('.alert-container').length).to.equal(1);
-    }
-
+    expect($('.alert-container').length).to.equal(1);
   });
 
   it("should create success notification", function() {
