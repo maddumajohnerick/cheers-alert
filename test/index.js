@@ -335,4 +335,30 @@ describe("cheers-alert functionalities", function() {
     expect($('.cheers-holder').attr('style')).to.contain('background: transparent;');
     expect($('.cheers-icon').attr('style')).to.contain('background: transparent;');
   });
+
+  it("should stack notifs", function() {
+    cheers.setStacking(true);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('.cheers-holder').css('position')).to.contain('');
+  });
+
+  it("should not stack notifs", function() {
+    cheers.setStacking(false);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('.cheers-holder').css('position')).to.contain('fixed');
+  });
 });
