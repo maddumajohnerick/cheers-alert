@@ -1,11 +1,16 @@
-.cheers-holder {
-  border: 1px solid black;
+.alert-container {
+  position: fixed;
+  width: 335px;
+  height: auto;
   top: 0;
   right: 0;
+}
+
+.cheers-holder {
+  border: 1px solid black;
   width: 320px;
+  height: 67px;
   max-width: 320px;
-  /*padding: 10px;*/
-  position: fixed;
   border-color: transparent;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -91,24 +96,24 @@
 
 .cheers-holder.slideleft {
   margin-top: 15px;
-  margin-right: -370px;
+  margin-left: 370px;
   -webkit-animation-name: slideleft;
   -moz-animation-name: slideleft;
   animation-name: slideleft;
 }
 
 @-webkit-keyframes slideleft {
-  0%   {margin-right: -370px;}
-  5%  {margin-right: 15px;}
-  95% {margin-right: 15px;}
-  100% {margin-right: -370px;}
+  0%   {margin-left: 370px;}
+  5%  {margin-left: 0px;}
+  95% {margin-left: 0px;}
+  100% {margin-left: 370px;}
 }
 
 @keyframes slideleft {
-  0%   {margin-right: -370px;}
-  5%  {margin-right: 15px;}
-  95% {margin-right: 15px;}
-  100% {margin-right: -370px;}
+  0%   {margin-left: 370px;}
+  5%  {margin-left: 0px;}
+  95% {margin-left: 0px;}
+  100% {margin-left: 370px;}
 }
 
 .cheers-holder.fadein {

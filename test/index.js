@@ -31,7 +31,6 @@ describe("cheers-alert notification", function() {
       icon: 'fa-user',
     });
 
-
     expect($('.cheers-holder').attr('class')).to.contain('cheers-holder slideleft success');
   });
 
@@ -235,7 +234,7 @@ describe("cheers-alert field validation", function() {
     this.timeout(6000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 5000);
   });
@@ -260,7 +259,7 @@ describe("cheers-alert functionalities", function() {
     this.timeout(6000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 5000);
   });
@@ -278,7 +277,7 @@ describe("cheers-alert functionalities", function() {
     this.timeout(5000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 4000);
   });
@@ -296,7 +295,7 @@ describe("cheers-alert functionalities", function() {
     this.timeout(6000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 5000);
   });
@@ -316,7 +315,7 @@ describe("cheers-alert functionalities", function() {
     this.timeout(4000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 3000);
   });
