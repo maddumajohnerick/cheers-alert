@@ -64,10 +64,9 @@ var cheers = (function () {
 
   function setContainer(data, type) {
     var validated = validateFields(data);
-    var conExist = $('.alert-container').length ? true : false;
     if (!validated) return false;
 
-    if (!conExist) {
+    if (!$('.alert-container').length) {
       var container = $('<div class="alert-container"></div>');
       $(container).appendTo('body');
     }
