@@ -322,7 +322,7 @@ describe("cheers-alert functionalities", function() {
     }, 5000);
   });
 
-  it("should dismiss onClick", function(done) {
+  it("should not dismiss if setToggle is false ", function(done) {
     cheers.setToggle(false);
 
     cheers.success({
@@ -340,6 +340,23 @@ describe("cheers-alert functionalities", function() {
         expect($('.alert-container').html()).to.contain('cheers-holder');
       } );
     }, 3000);
+  });
+
+  it("should have these css if setToggle is true", function() {
+    cheers.setToggle(true);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    $('.cheers-holder').trigger('click');
+
+    console.log($('.cheers-holder').html());
+    expect($('.cheers-holder').attr('style')).to.contain('background: transparent;');
+    expect($('.cheers-icon').attr('style')).to.contain('background: transparent;');
   });
 
   it("should stack notifs", function() {
