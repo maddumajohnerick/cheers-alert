@@ -24,6 +24,10 @@ describe("cheers-alert notification", function() {
   });
 
   it("should check if alert-container exist", function() {
+    expect($('.alert-container').length).to.equal(0);
+  });
+
+  it("create alert-container if none exist", function() {
     cheers.success({
       title: 'Warning',
       message: 'Validation error',
@@ -31,6 +35,7 @@ describe("cheers-alert notification", function() {
       icon: 'fa-user',
     });
 
+    expect($('.alert-container').length).to.equal(1);
     expect($('body').html()).to.contain('alert-container');
   });
 
