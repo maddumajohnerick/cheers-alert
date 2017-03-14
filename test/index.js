@@ -354,9 +354,48 @@ describe("cheers-alert functionalities", function() {
 
     $('.cheers-holder').trigger('click');
 
-    console.log($('.cheers-holder').html());
     expect($('.cheers-holder').attr('style')).to.contain('background: transparent;');
     expect($('.cheers-icon').attr('style')).to.contain('background: transparent;');
+  });
+
+  it("should display none after 500ms", function(done) {
+    cheers.setToggle(true);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    $('.cheers-holder').trigger('click');
+
+    this.timeout(1000);
+    setTimeout(function() {
+      check( done, function() {
+        expect($('.cheers-holder').attr('style')).to.contain('display: none;');
+      } );
+    }, 500);
+  });
+
+  it("should be removed after 2600ms", function(done) {
+    cheers.setToggle(true);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    $('.cheers-holder').trigger('click');
+
+    this.timeout(3000);
+    setTimeout(function() {
+      check( done, function() {
+        expect($('.alert-container').html().length).to.equal(0);
+      } );
+    }, 2600);
   });
 
   it("should stack notifs", function() {
