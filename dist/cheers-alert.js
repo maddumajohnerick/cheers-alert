@@ -7,8 +7,8 @@ Object.defineProperty(exports, '__esModule', {
 
 var cheers = (function () {
   var duration = 4;
-  var dismissClick = false;
-  var stacking = false;
+  var dismissClick = true;
+  var stacking = true;
   var defaultIcons = {
     success: 'fa-check',
     error: 'fa-times',

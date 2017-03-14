@@ -60,13 +60,13 @@ cheers.setDuration(10); //sets all notification's transition.
 ### Enable close onClick
 set to false to prevent closing onClick.
 ```js
-cheers.setToggle(true); //defaults to false when not set.
+cheers.setToggle(false); //defaults to true when not set.
 ```
 
 ### Enable stacking
-set to true to enable stacking of notifications.
+set false true to disable stacking of notifications.
 ```js
-cheers.setStacking(true); //defaults to false when not set.
+cheers.setStacking(false); //defaults to true when not set.
 ```
 
 ### Customize CSS
