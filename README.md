@@ -64,7 +64,7 @@ cheers.setToggle(false); //defaults to true when not set.
 ```
 
 ### Disable stacking
-set false true to disable stacking of notifications.
+set false to disable stacking of notifications.
 ```js
 cheers.setStacking(false); //defaults to true when not set.
 ```
