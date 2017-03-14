@@ -102,15 +102,15 @@
 
 @-webkit-keyframes slideleft {
   0%   {margin-left: 370px;}
-  5%  {margin-left: 0px;}
-  95% {margin-left: 0px;}
+  5%  {margin-left: 0;}
+  95% {margin-left: 0;}
   100% {margin-left: 370px;}
 }
 
 @keyframes slideleft {
   0%   {margin-left: 370px;}
-  5%  {margin-left: 0px;}
-  95% {margin-left: 0px;}
+  5%  {margin-left: 0;}
+  95% {margin-left: 0;}
   100% {margin-left: 370px;}
 }
 
