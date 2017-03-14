@@ -22,8 +22,8 @@
       <br />
       <form class="form-horizontal">
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-offset-2 col-sm-1 control-label">Duration</label>
-          <div class="col-sm-2">
+          <label for="inputEmail3" class="col-sm-1 control-label">Duration</label>
+          <div class="col-sm-1">
             <input type="number" min="2" class="form-control" id="duaration" name="duration" placeholder="in seconds" value="4">
           </div>
           <label for="inputEmail3" class="col-sm-1 control-label">Alert</label>
@@ -33,9 +33,16 @@
               <option value="slideleft">slideleft</option>
             </select>
           </div>
-          <label for="inputPassword3" class="col-sm-2 control-label">Dismiss on click</label>
+          <label for="inputPassword3" class="col-sm-2 control-label">Click Dismiss</label>
           <div class="col-sm-2">
             <select class="form-control" name="dismiss" id="dismiss">
+              <option value="false">false</option>
+              <option value="true">true</option>
+            </select>
+          </div>
+          <label for="inputPassword3" class="col-sm-1 control-label">Stacking</label>
+          <div class="col-sm-2">
+            <select class="form-control" name="stack" id="stack">
               <option value="false">false</option>
               <option value="true">true</option>
             </select>
@@ -63,6 +70,15 @@
         cheers.setToggle(true);
       } else {
         cheers.setToggle(false);
+      }
+    });
+
+    $("#stack").on("change", function(e) {
+      e.preventDefault();
+      if (e.currentTarget.value === 'true') {
+        cheers.setStacking(true);
+      } else {
+        cheers.setStacking(false);
       }
     });
 

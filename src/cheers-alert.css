@@ -1,11 +1,16 @@
-.cheers-holder {
-  border: 1px solid black;
+.alert-container {
+  position: fixed;
+  width: 335px;
+  height: auto;
   top: 0;
   right: 0;
-  width: 350px;
-  max-width: 350px;
-  /*padding: 10px;*/
-  position: fixed;
+}
+
+.cheers-holder {
+  border: 1px solid black;
+  width: 320px;
+  height: 67px;
+  max-width: 320px;
   border-color: transparent;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -13,6 +18,7 @@
   color: #ffffff;
   font-family: "Open Sans", sans-serif;
   display: block;
+  z-index: 99998;
 }
 
 .cheers-holder.success {
@@ -65,12 +71,13 @@
 
 .cheers-holder .cheers-body {
   height: auto;
-  margin: 13px 15px 10px 0;
-  width: 270px;
+  margin: 13px 10px 10px 0;
+  width: 245px;
   float: right;
   font-weight: normal;
   font-size: 14px;
   transition: .5s;
+  cursor: default;
 }
 
 .cheers-holder .cheers-title {
@@ -80,34 +87,31 @@
 }
 
 .cheers-holder .cheers-overlay {
-  position: absolute;
-  right: 0;
-  top: 0;
   height: 75px;
   width: 350px;
-  z-index: 100;
+  z-index: 99999;
 }
 
 .cheers-holder.slideleft {
   margin-top: 15px;
-  margin-right: -400px;
+  margin-left: 370px;
   -webkit-animation-name: slideleft;
   -moz-animation-name: slideleft;
   animation-name: slideleft;
 }
 
 @-webkit-keyframes slideleft {
-  0%   {margin-right: -400px;}
-  5%  {margin-right: 15px;}
-  95% {margin-right: 15px;}
-  100% {margin-right: -400px;}
+  0%   {margin-left: 370px;}
+  5%  {margin-left: 0px;}
+  95% {margin-left: 0px;}
+  100% {margin-left: 370px;}
 }
 
 @keyframes slideleft {
-  0%   {margin-right: -400px;}
-  5%  {margin-right: 15px;}
-  95% {margin-right: 15px;}
-  100% {margin-right: -400px;}
+  0%   {margin-left: 370px;}
+  5%  {margin-left: 0px;}
+  95% {margin-left: 0px;}
+  100% {margin-left: 370px;}
 }
 
 .cheers-holder.fadein {

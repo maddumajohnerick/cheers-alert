@@ -7,6 +7,7 @@ Object.defineProperty(exports, '__esModule', {
 var cheers = (function () {
   var duration = 4;
   var dismissClick = false;
+  var stacking = false;
   var defaultIcons = {
     success: 'fa-check',
     error: 'fa-times',
@@ -22,17 +23,24 @@ var cheers = (function () {
     dismissClick = toggle;
   }
 
-  function dismiss(container) {
-    $(container).css('transition', '.5s');
-    $(container).css('background', 'transparent');
-    $(container).find('.cheers-icon').css('background', 'transparent');
-    $(container).find('.cheers-icon i').css('color', 'transparent');
-    $(container).find('.cheers-title').css('color', 'transparent');
-    $(container).find('.cheers-body').css('color', 'transparent');
-    $(container).css('-webkit-box-shadow', '1px 1px 4px rgba(0, 0, 0, 0.0)');
-    $(container).css('box-shadow', '1px 1px 4px rgba(0, 0, 0, 0.0)');
+  function setStacking(stack) {
+    stacking = stack;
+  }
+
+  function dismiss(notif) {
+    $(notif).css('transition', '.5s');
+    $(notif).css('background', 'transparent');
+    $(notif).find('.cheers-icon').css('background', 'transparent');
+    $(notif).find('.cheers-icon i').css('color', 'transparent');
+    $(notif).find('.cheers-title').css('color', 'transparent');
+    $(notif).find('.cheers-body').css('color', 'transparent');
+    $(notif).css('-webkit-box-shadow', '1px 1px 4px rgba(0, 0, 0, 0.0)');
+    $(notif).css('box-shadow', '1px 1px 4px rgba(0, 0, 0, 0.0)');
     setTimeout(function () {
-      $(container).remove();
+      $(notif).css('display', 'none');
+    }, 500);
+    setTimeout(function () {
+      $(notif).remove();
     }, 2600);
   }
 
@@ -58,11 +66,16 @@ var cheers = (function () {
     var validated = validateFields(data);
     if (!validated) return false;
 
+    if (!$('.alert-container').length) {
+      var container = $('<div class="alert-container"></div>');
+      $(container).appendTo('body');
+    }
+
     var icon = validated.icon || defaultIcons[type];
     var alert = validated.alert || 'fadein';
     duration = validated.duration || duration;
 
-    var container = $('<div class="cheers-holder ' + alert + ' ' + type + '">'
+    var notif = $('<div class="cheers-holder ' + alert + ' ' + type + '">'
                       +'<div class="cheers-icon">'
                           +'<i class="fa ' + icon + '" aria-hidden="true"></i>'
                       +'</div>'
@@ -72,15 +85,23 @@ var cheers = (function () {
                       +'</div>'
                       +'<div class="cheers-overlay"></div>'
                   +'</div>');
-    $(container).css('-webkit-animation-duration', ''+ duration +'s');
-    $(container).css('animation-duration', ''+ duration +'s');
-    $(container).appendTo('body');
-    if (dismissClick) {
-      $(container).on('click', function (){ dismiss(container); });
+    $(notif).css('-webkit-animation-duration', ''+ duration +'s');
+    $(notif).css('animation-duration', ''+ duration +'s');
+    $(notif).css('position', stacking ? '' : 'fixed');
+    if (stacking) {
+      $(notif).prependTo('.alert-container');
+    } else {
+      $(notif).appendTo('.alert-container');
     }
     setTimeout(function () {
-      $(container).remove();
-    }, 1000 * (duration + 1));
+      $(notif).css('display', 'none');
+    }, 1000 * Number(duration));
+    setTimeout(function () {
+      $(notif).remove();
+    }, 1000 * (Number(duration) + 1));
+    if (dismissClick) {
+      $(notif).on('click', function (){ dismiss(notif); });
+    }
   }
 
   function success(data) {
@@ -105,7 +126,8 @@ var cheers = (function () {
     error: error,
     info: info,
     setDuration: setDuration,
-    setToggle: setToggle
+    setToggle: setToggle,
+    setStacking: setStacking
   };
 
   return alert;

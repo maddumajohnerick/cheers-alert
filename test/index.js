@@ -23,7 +23,7 @@ describe("cheers-alert notification", function() {
     $('body').empty();
   });
 
-  it("should create success notification", function() {
+  it("should check if alert-container exist", function() {
     cheers.success({
       title: 'Warning',
       message: 'Validation error',
@@ -31,6 +31,27 @@ describe("cheers-alert notification", function() {
       icon: 'fa-user',
     });
 
+    expect($('body').html()).to.contain('alert-container');
+  });
+
+  it("should create alert-container if none exist", function() {
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('.alert-container').length).to.equal(1);
+  });
+
+  it("should create success notification", function() {
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
 
     expect($('.cheers-holder').attr('class')).to.contain('cheers-holder slideleft success');
   });
@@ -235,7 +256,7 @@ describe("cheers-alert field validation", function() {
     this.timeout(6000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 5000);
   });
@@ -260,7 +281,7 @@ describe("cheers-alert functionalities", function() {
     this.timeout(6000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 5000);
   });
@@ -278,7 +299,7 @@ describe("cheers-alert functionalities", function() {
     this.timeout(5000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 4000);
   });
@@ -296,7 +317,7 @@ describe("cheers-alert functionalities", function() {
     this.timeout(6000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 5000);
   });
@@ -316,7 +337,7 @@ describe("cheers-alert functionalities", function() {
     this.timeout(4000);
     setTimeout(function() {
       check( done, function() {
-        expect($('body').html().length).to.equal(0);
+        expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 3000);
   });
@@ -335,5 +356,31 @@ describe("cheers-alert functionalities", function() {
 
     expect($('.cheers-holder').attr('style')).to.contain('background: transparent;');
     expect($('.cheers-icon').attr('style')).to.contain('background: transparent;');
+  });
+
+  it("should stack notifs", function() {
+    cheers.setStacking(true);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('.cheers-holder').css('position')).to.contain('');
+  });
+
+  it("should not stack notifs", function() {
+    cheers.setStacking(false);
+
+    cheers.success({
+      title: 'Warning',
+      message: 'Validation error',
+      alert: 'slideleft',
+      icon: 'fa-user',
+    });
+
+    expect($('.cheers-holder').css('position')).to.contain('fixed');
   });
 });
