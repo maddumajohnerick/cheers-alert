@@ -57,13 +57,13 @@ set the .duration one-time to avoid redundancy. minimum of 2(seconds).
 cheers.setDuration(10); //sets all notification's transition.
 ```
 
-### Enable close onClick
+### Disable close onClick
 set to false to prevent closing onClick.
 ```js
 cheers.setToggle(false); //defaults to true when not set.
 ```
 
-### Enable stacking
+### Disable stacking
 set false true to disable stacking of notifications.
 ```js
 cheers.setStacking(false); //defaults to true when not set.
