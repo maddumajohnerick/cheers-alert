@@ -1,6 +1,6 @@
 {
   "name": "cheers-alert",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "simple website notification",
   "main": [
     "dist/cheers-alert.min.js",

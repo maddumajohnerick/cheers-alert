@@ -9,7 +9,7 @@
 .cheers-holder {
   border: 1px solid black;
   width: 320px;
-  height: 67px;
+  min-height: 67px;
   max-width: 320px;
   border-color: transparent;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -19,6 +19,7 @@
   font-family: "Open Sans", sans-serif;
   display: block;
   z-index: 99998;
+  clear: both;
 }
 
 .cheers-holder.success {

@@ -84,7 +84,7 @@ var cheers = (function () {
                           +''+ (validated.title ? '<div class="cheers-title">' + validated.title + '</div>' : '') + ''
                           +'' + validated.message + ''
                       +'</div>'
-                      +'<div class="cheers-overlay"></div>'
+                      +'<div style="clear: both;"></div>'
                   +'</div>');
     $(notif).css('-webkit-animation-duration', ''+ duration +'s');
     $(notif).css('animation-duration', ''+ duration +'s');
