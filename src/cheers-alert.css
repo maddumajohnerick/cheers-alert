@@ -4,6 +4,7 @@
   height: auto;
   top: 0;
   right: 0;
+  z-index: 9999;
 }
 
 .cheers-holder {
@@ -18,7 +19,7 @@
   color: #ffffff;
   font-family: "Open Sans", sans-serif;
   display: block;
-  z-index: 99998;
+  z-index: 9998;
   clear: both;
 }
 
@@ -85,12 +86,6 @@
   font-weight: 600;
   transition: .5s;
   font-size: 14px;
-}
-
-.cheers-holder .cheers-overlay {
-  height: 75px;
-  width: 350px;
-  z-index: 99999;
 }
 
 .cheers-holder.slideleft {
