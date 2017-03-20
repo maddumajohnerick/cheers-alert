@@ -91,44 +91,10 @@
 .cheers-holder.slideleft {
   margin-top: 15px;
   margin-left: 370px;
-  /*-webkit-animation-name: slideleft;
-  -moz-animation-name: slideleft;
-  animation-name: slideleft;*/
-}
-
-@-webkit-keyframes slideleft {
-  0%   {margin-left: 370px;}
-  5%  {margin-left: 0;}
-  95% {margin-left: 0;}
-  100% {margin-left: 370px;}
-}
-
-@keyframes slideleft {
-  0%   {margin-left: 370px;}
-  5%  {margin-left: 0;}
-  95% {margin-left: 0;}
-  100% {margin-left: 370px;}
 }
 
 .cheers-holder.fadein {
   margin-top: 15px;
   margin-right: 15px;
   opacity: .0;
-  /*-webkit-animation-name: fadein;
-  -moz-animation-name: fadein;
-  animation-name: fadein;*/
-}
-
-@-webkit-keyframes fadein {
-  0%   {opacity: .0;}
-  10%  {opacity: 1;}
-  90% {opacity: 1;}
-  100% {opacity: .0;}
-}
-
-@keyframes fadein {
-  0%   {opacity: .0;}
-  10%  {opacity: 1;}
-  90% {opacity: 1;}
-  100% {opacity: .0;}
 }
