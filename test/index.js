@@ -248,8 +248,8 @@ describe("cheers-alert field validation", function() {
     expect($('body').html().length).to.equal(0);
   });
 
-  it("should default duration to 4s", function(done) {
-    cheers.setDuration(1);
+  it("should default duration to 2s", function(done) {
+    cheers.setDuration(2);
 
     cheers.success({
       title: 'Warning',
@@ -261,6 +261,7 @@ describe("cheers-alert field validation", function() {
     this.timeout(6000);
     setTimeout(function() {
       check( done, function() {
+        console.log($('.alert-container').html());
         expect($('.alert-container').html().length).to.equal(0);
       } );
     }, 5000);
@@ -283,12 +284,12 @@ describe("cheers-alert functionalities", function() {
       icon: 'fa-user',
     });
 
-    this.timeout(6000);
+    this.timeout(9000);
     setTimeout(function() {
       check( done, function() {
         expect($('.alert-container').html().length).to.equal(0);
       } );
-    }, 5000);
+    }, 8000);
   });
 
   it("should dismiss after set secs", function(done) {
@@ -301,12 +302,12 @@ describe("cheers-alert functionalities", function() {
       icon: 'fa-user',
     });
 
-    this.timeout(5000);
+    this.timeout(8000);
     setTimeout(function() {
       check( done, function() {
         expect($('.alert-container').html().length).to.equal(0);
       } );
-    }, 4000);
+    }, 7000);
   });
 
   it("should set setToggle", function(done) {
@@ -319,12 +320,12 @@ describe("cheers-alert functionalities", function() {
       icon: 'fa-user',
     });
 
-    this.timeout(6000);
+    this.timeout(9000);
     setTimeout(function() {
       check( done, function() {
         expect($('.alert-container').html().length).to.equal(0);
       } );
-    }, 5000);
+    }, 8000);
   });
 
   it("should not dismiss if setToggle is false ", function(done) {

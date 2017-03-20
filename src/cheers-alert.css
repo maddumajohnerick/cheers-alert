@@ -91,9 +91,9 @@
 .cheers-holder.slideleft {
   margin-top: 15px;
   margin-left: 370px;
-  -webkit-animation-name: slideleft;
+  /*-webkit-animation-name: slideleft;
   -moz-animation-name: slideleft;
-  animation-name: slideleft;
+  animation-name: slideleft;*/
 }
 
 @-webkit-keyframes slideleft {
@@ -114,9 +114,9 @@
   margin-top: 15px;
   margin-right: 15px;
   opacity: .0;
-  -webkit-animation-name: fadein;
+  /*-webkit-animation-name: fadein;
   -moz-animation-name: fadein;
-  animation-name: fadein;
+  animation-name: fadein;*/
 }
 
 @-webkit-keyframes fadein {

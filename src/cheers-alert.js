@@ -27,6 +27,28 @@ var cheers = (function () {
     stacking = stack;
   }
 
+  function animate(notif, duration, alert) {
+    if (alert === 'fadein') {
+      $(notif).animate({
+        opacity: 1
+      }, 200);
+      setTimeout(function() {
+        $(notif).animate({
+          opacity: .0
+        }, 200);
+      }, 1000 * Number(duration));
+    } else {
+      $(notif).animate({
+        marginLeft: '0px'
+      }, 200);
+      setTimeout(function() {
+        $(notif).animate({
+          marginLeft: '+=370px'
+        }, 200);
+      }, 1000 * Number(duration));
+    }
+  }
+
   function dismiss(notif) {
     $(notif).css('transition', '.5s');
     $(notif).css('background', 'transparent');
@@ -93,12 +115,13 @@ var cheers = (function () {
     } else {
       $(notif).appendTo('.alert-container');
     }
+    animate(notif, duration, alert);
     setTimeout(function () {
       $(notif).css('display', 'none');
-    }, 1000 * Number(duration));
+    }, 1000 * (Number(duration) + (1 + .4)));
     setTimeout(function () {
       $(notif).remove();
-    }, 1000 * (Number(duration) + 1));
+    }, 1000 * (Number(duration) + (2 + .4)));
     if (dismissClick) {
       $(notif).on('click', function (){ dismiss(notif); });
     }
