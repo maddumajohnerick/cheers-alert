@@ -72,13 +72,10 @@ cheers.setStacking(false); //defaults to true when not set.
 ### Customize CSS
 overide this class to modify styles.
 ```html
-<div class="cheer-holder">
+<div class="cheer-holder success">  <!-- success, error, warning or info  -->
     <div class="cheers-icon"></div>
     <div class="cheers-body">
         <div class="cheers-title"></div>
     </div>
 </div>
 ```
-
-### To Do
-  - more alert styles.
