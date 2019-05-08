@@ -30,7 +30,8 @@ cheers.success({
     message: 'Validation error',
     alert: 'slideleft',
     icon: 'fa-user',
-    duration: 3
+    duration: 3,
+    callback: () => {}
 });
 ```
 
@@ -40,6 +41,7 @@ cheers.success({
   - alert - [String] transition of notification(defaults to fadein).
   - icon - [String] uses font awesome(optional).
   - duration - [Number] transition duration(defaults to 4) in seconds.
+  - callback - [Function] callback function triggered onClick.
 
 ### Notification Types
   - success

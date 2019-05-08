@@ -122,9 +122,14 @@ var cheers = (function () {
     setTimeout(function () {
       $(notif).remove();
     }, 1000 * (Number(duration) + (2 + .4)));
-    if (dismissClick) {
-      $(notif).on('click', function (){ dismiss(notif); });
-    }
+    $(notif).on('click', function (){ 
+      if (validated.callback) {
+        validated.callback()
+      }
+      if (dismissClick) {
+        dismiss(notif); 
+      }
+    });
   }
 
   function success(data) {
