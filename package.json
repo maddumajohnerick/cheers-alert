@@ -30,7 +30,7 @@
   "homepage": "https://github.com/maddumajohnerick/cheers-alert#readme",
   "dependencies": {
     "font-awesome": "4.7.0",
-    "jquery": "3.1.1"
+    "jquery": "3.5.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
